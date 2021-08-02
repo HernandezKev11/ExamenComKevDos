@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Atleta registro</title>
+</head>
+<body>
+Registro de atleta:
+
+<form action="#" th:action="@{/insertar}" th:object="${atleta}" method="post">
+
+    <label for="name">Nombre</label>
+    <input type="text" th:field="*{nombreCompleto}" id="name">
+
+    <label for="primerApellido">Primer apellido</label>
+    <input type="text" th:field="*{primerApellido}" id="primerApellido">
+
+    <label for="primerApellido">Segundo apellido</label>
+    <input type="text" th:field="*{segundoApellido}" id="segundoApellido">
+
+    <br>
+    <br>
+
+    <label for="correo">Correo</label>
+    <input type="email" th:field="*{correo}" id="correo">
+
+    <label for="telefono">Telefono</label>
+    <input type="number" th:field="*{telefono}" id="telefono">
+
+    <label for="fecha">Fecha de nacimiento</label>
+    <input type="date" th:field="*{fechaNacimiento}" id="fecha">
+
+    <label for="deporte">Deporte que practica</label>
+    <input type="text" th:field="*{deporte}" id="deporte">
+
+    <br>
+    <br>
+
+    <label for="estatura">Estatura</label>
+    <input type="text" th:field="*{estatura}" id="estatura">
+
+    <label for="peso">Peso</label>
+    <input type="text" th:field="*{peso}" id="peso">
+
+    <label for="rama">Rama competitiva</label>
+    <input type="text" th:field="*{ramaCompetitiva}" id="rama">
+
+    <br>
+    <br>
+
+    <label for="prov">Provincia</label>
+    <input type="text" th:field="*{provincia}" id="prov">
+
+    <label for="canton">Canton</label>
+    <input type="text" th:field="*{canton}" id="canton">
+
+    <label for="distrito">Distrito</label>
+    <input type="text" th:field="*{distrito}" id="distrito">
+
+    <label for="direccion">Direccion</label>
+    <input type="text" th:field="*{direccion}" id="direccion">
+
+    <br>
+    <br>
+
+    <input type="submit" value="Registrar atleta">
+</form>
+
+<br>
+<br>
+
+<a th:href="@{/}">REGRESAR AL HOME</a>
+</body>
+</html>

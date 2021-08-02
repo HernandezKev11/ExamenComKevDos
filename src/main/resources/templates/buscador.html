@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Busqueda</title>
+</head>
+<body>
+    <form action="#" th:action="@{/resultadoBusqueda}" th:object="${atleta}"  method="post">
+
+        <label for="busqueda">Barra busqueda</label>
+        <input type="text" th:field="*{nombreCompleto}" id="busqueda">
+
+        <input type="submit" value="Buscar">
+    </form>
+<p>________________________________________________</p>
+<a th:href="@{/}">REGRESAR AL HOME</a>
+</body>
+</html>

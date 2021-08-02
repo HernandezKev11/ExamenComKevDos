@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial</title>
+</head>
+<body>
+<div>
+    <h1>Historial de IMC</h1>
+    <ul>
+        <div th:each="entry : ${imcs}">
+            <li>
+                <h4>
+                    <label>Fecha del calculo</label>
+                    <span th:text="${entry.fechaCalculo}">Fecha</span>
+                    <br>
+                    <label>IMC:</label>
+                    <span th:text="${entry.getImc()}">IMC</span>
+                    <br>
+                    <p>_____________________________</p>
+                </h4>
+
+
+
+            </li>
+        </div>
+    </ul>
+</div>
+
+<a th:href="@{/}">REGRESAR AL HOME</a>
+</body>
+</html>

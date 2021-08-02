@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+</head>
+<body>
+<div>
+  <h1>Resultado de busqueda</h1>
+  <ul>
+    <div th:each="entry : ${atletas}">
+      <li>
+        <h4>
+          <span th:text="${entry.nombreCompleto}">Nombre</span>
+        </h4>
+
+        <a th:href="@{/verDatos/{id}(id= ${entry.id})}">Ver datos completos</a>
+        <br>
+        <a th:href="@{/updateAtleta/{id}(id= ${entry.id})}">Actulizar datos</a>
+        <br>
+        <a th:href="@{/historialImc/{id}(id= ${entry.id})}">Historial IMC</a>
+
+      </li>
+    </div>
+  </ul>
+  <a th:href="@{/}">REGRESAR AL HOME</a>
+</div>
+</body>
+</html>

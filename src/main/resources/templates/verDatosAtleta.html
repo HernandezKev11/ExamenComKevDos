@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar Articulo</title>
+</head>
+<body>
+Datos del Atleta
+<br>
+
+<label style="font-weight: bold">Nombre completo:</label>
+<span th:text="${nombreCompleto}">Nombre completo</span>
+<br>
+
+<label style="font-weight: bold">Fecha de nacimiento:</label>
+<span th:text="${fechaNacimiento}">Nacimiento</span>
+<br>
+
+<label style="font-weight: bold">Correo electronico:</label>
+<span th:text="${correo}">Correo</span>
+<br>
+
+<label style="font-weight: bold">Número telefonico:</label>
+<span th:text="${telefono}">Telefono</span>
+<br>
+
+<label style="font-weight: bold">Estatura:</label>
+<span th:text="${estatura}">Estatura</span>
+<br>
+
+<label style="font-weight: bold">Peso:</label>
+<span th:text="${peso}">Peso</span>
+<br>
+
+<label style="font-weight: bold">IMC:</label>
+<span th:text="${imc}">imc</span>
+<br>
+
+<label style="font-weight: bold">Dirección:</label>
+<span th:text="${direccion}">Dirección</span>
+<br>
+
+<label style="font-weight: bold">Provincia,Cantron y distrito:</label>
+<span th:text="${pcd}">pcd</span>
+<br>
+
+<label style="font-weight: bold">Deporte:</label>
+<span th:text="${deporte}">deporte</span>
+<br>
+
+<label style="font-weight: bold">Rama competitiva:</label>
+<span th:text="${ramCompetitiva}">ramCompetitiva</span>
+<br>
+<br>
+<a th:href="@{/}">REGRESAR AL HOME</a>
+</body>
+</html>

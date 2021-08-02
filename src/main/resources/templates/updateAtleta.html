@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update atleta</title>
+</head>
+<body>
+
+    <form action="#" th:action="@{/confirmarUpdate/{id}(id= ${atleta.id})}" th:object="${atleta}" method="post">
+
+        <label for="dir">Dirección</label>
+        <input type="text" th:value="*{direccion}" th:field="*{direccion}" id="dir">
+
+        <label for="prov">Provincia</label>
+        <input type="text" th:value="*{provincia}" th:field="*{provincia}" id="prov">
+
+        <label for="can">Canton</label>
+        <input type="text" th:value="*{canton}" th:field="*{canton}" id="can">
+
+        <label for="distrito">Distrito</label>
+        <input type="text" th:value="*{distrito}" th:field="*{distrito}" id="distrito">
+
+        <br>
+        <br>
+
+        <label for="tel">Telefono</label>
+        <input type="text" th:value="*{telefono}" th:field="*{telefono}" id="tel">
+
+        <label for="correo">Correo</label>
+        <input type="text" th:value="*{correo}" th:field="*{correo}" id="correo">
+
+
+        <label for="peso">Peso</label>
+        <input type="text" th:value="*{peso}" th:field="*{peso}" id="peso">
+
+        <input type="submit" value="Confirmar cambios">
+    </form>
+
+    <br>
+    <br>
+    <a th:href="@{/}">REGRESAR AL HOME</a>
+</body>
+</html>
