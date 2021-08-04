@@ -57,7 +57,7 @@ public class AtletasController {
         return "listar";
     }
 
-    @RequestMapping("/verDatos/{id}")
+    @RequestMapping(value = "/verDatos/{id}", method = RequestMethod.GET)
     public String recuperarDatosDeAtleta(Model model, @PathVariable long id){
         Optional<Atleta> atleta = atletaService.get(id);
 
@@ -78,7 +78,7 @@ public class AtletasController {
         return "notFound";
     }
 
-    @RequestMapping("/updateAtleta/{id}")
+    @RequestMapping(value = "/updateAtleta/{id}", method = RequestMethod.GET)
     public String actualizarDatosAtleta(Model model, @PathVariable long id){
         Optional<Atleta> atleta = atletaService.get(id);
 
@@ -89,7 +89,7 @@ public class AtletasController {
         return "notFound";
     }
 
-    @RequestMapping("/confirmarUpdate/{id}")
+    @RequestMapping(value = "/confirmarUpdate/{id}", method = RequestMethod.PUT)
     public String actualizarDatosAtletaConfirmacion(Atleta atleta, BindingResult result, Model model, @PathVariable long id){
         Optional<Atleta> originalAtleta = atletaService.get(id);
         if(originalAtleta.isPresent()){
@@ -106,19 +106,19 @@ public class AtletasController {
 
     }
 
-    @RequestMapping("/buscador")
+    @RequestMapping(value = "/buscador", method = RequestMethod.GET)
     public String cargarVistaBuscador(Model model){
         model.addAttribute(new Atleta());
         return "buscador";
     }
 
-    @RequestMapping("/resultadoBusqueda")
+    @RequestMapping(value = "/resultadoBusqueda", method = RequestMethod.GET)
     public String realizarBusqueda(Atleta atleta,Model model){
         model.addAttribute("atletas",atletaService.getBusqueda(atleta.getNombreCompleto()));
         return "resultadoBusqueda";
     }
 
-    @RequestMapping("/historialImc/{id}")
+    @RequestMapping(value = "/historialImc/{id}", method = RequestMethod.GET)
     public String verHistorialIMC(Model model, @PathVariable long id){
         List<ImcAtleta> listaImcs = imcService.getAll();
         List<ImcAtleta> listaOficial = new ArrayList<>();
