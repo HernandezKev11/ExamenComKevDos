@@ -30,6 +30,7 @@ public class AtletaServiceImpl implements AtletaService {
         atletaActulizar.setTelefono(atleta.getTelefono());
         atletaActulizar.setCorreo(atleta.getCorreo());
         atletaActulizar.setPeso(atleta.getPeso());
+        atletaActulizar.setImc(atleta.getImc());
         repo.save(atletaActulizar);
     }
 

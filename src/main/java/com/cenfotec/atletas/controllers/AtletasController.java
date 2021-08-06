@@ -89,13 +89,14 @@ public class AtletasController {
         return "notFound";
     }
 
-    @RequestMapping(value = "/confirmarUpdate/{id}", method = RequestMethod.PUT)
+    @RequestMapping("/confirmarUpdate/{id}")
     public String actualizarDatosAtletaConfirmacion(Atleta atleta, BindingResult result, Model model, @PathVariable long id){
         Optional<Atleta> originalAtleta = atletaService.get(id);
         if(originalAtleta.isPresent()){
             if(originalAtleta.get().getPeso() != atleta.getPeso()){
                 double imc = atleta.getPeso() / (originalAtleta.get().getEstatura() * originalAtleta.get().getEstatura());
                 ImcAtleta nuevoImc = new ImcAtleta(String.valueOf(imc),id,String.valueOf(LocalDate.now()));
+                atleta.setImc(imc);
                 imcService.save(nuevoImc);
             }
             atletaService.update(atleta,id);
@@ -112,13 +113,13 @@ public class AtletasController {
         return "buscador";
     }
 
-    @RequestMapping(value = "/resultadoBusqueda", method = RequestMethod.GET)
+    @RequestMapping("/resultadoBusqueda")
     public String realizarBusqueda(Atleta atleta,Model model){
         model.addAttribute("atletas",atletaService.getBusqueda(atleta.getNombreCompleto()));
         return "resultadoBusqueda";
     }
 
-    @RequestMapping(value = "/historialImc/{id}", method = RequestMethod.GET)
+    @RequestMapping( "/historialImc/{id}")
     public String verHistorialIMC(Model model, @PathVariable long id){
         List<ImcAtleta> listaImcs = imcService.getAll();
         List<ImcAtleta> listaOficial = new ArrayList<>();
